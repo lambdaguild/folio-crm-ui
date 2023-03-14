@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-card-content>
+      <form (ngSubmit)="login()" [formGroup]="loginForm" novalidate>
+        <h2>Log In</h2>
+        <mat-error *ngIf="!error">
+          The username and password were not recognized
+        </mat-error>
+        <mat-form-field>
+          <input matInput formControlName="username"
+          autocomplete="username"
+          required>
+          <mat-error [hidden]="loginForm.controls['username'].valid || loginForm.controls['username'].untouched"
+          >
+            Please provide a valid email address
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="password" placeholder="Password" formControlName="password"
+          autocomplete="current-password" name="password" required>
+          <mat-error [hidden]="loginForm.controls['password'].valid || loginForm.controls['password'].untouched">
+            Please provide a valid password
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" [disabled]="loginForm.invalid || isLoading">Login</button>
+      </form>
+    </mat-card-content>
+  </mat-card>

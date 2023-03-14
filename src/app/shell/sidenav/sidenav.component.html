@@ -1,0 +1,36 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+      <img
+        class="avatar mat-elevation-z8"
+        src="https://source.unsplash.com/c_GmwfHBDzk/40x40"
+      />
+  
+  
+      <mat-divider></mat-divider>
+  
+      <button mat-button class="menu-button" routerLink="/home">
+        <mat-icon >home</mat-icon>
+        
+      </button>
+      <button mat-button class="menu-button" routerLink="/profile">
+        <mat-icon >person</mat-icon>
+        
+      </button>
+      <button mat-button class="menu-button" routerLink="/about">
+        <mat-icon >info</mat-icon>
+        
+      </button>
+  
+      <mat-divider></mat-divider>
+  
+      <button mat-button class="menu-button" routerLink="/help">
+        <mat-icon >help</mat-icon>
+        
+      </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="content mat-elevation-z8">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
